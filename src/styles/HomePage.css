@@ -2,3 +2,32 @@ div.home {
     text-align: center;
     color: orange;
 }
+
+form.codeForm {
+    margin: 15px;
+}
+
+form.codeForm input {
+    margin-right: 10px;
+    height: 60px;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+form.codeForm button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: #eee;
+    background-color: rgb(50, 50, 197);
+    cursor: pointer;
+    transition: .2s;
+}
+
+form.codeForm button:hover {
+    letter-spacing: 2px;
+    color: orange;
+}

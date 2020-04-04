@@ -5,11 +5,11 @@ import HomePage from '../pages/HomePage';
 import Page02 from '../pages/Page02';
 import ErrorPage from '../pages/ErrorPage';
 
-const Page = () => {
+const Page = (props) => {
     return (
         <>
             <Switch>
-                <Route path="/" exact component={HomePage} />
+                <Route path="/" exact render={() => <HomePage numbers={props.numbers} changeNumber={props.changeNumber} />} />
                 <Route path="/page02" component={Page02} />
                 <Route component={ErrorPage} />
             </Switch>
