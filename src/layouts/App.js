@@ -5,7 +5,14 @@ import Page from './Page';
 
 class App extends Component {
   state = {
-    numbers: [1, 1, 1, 1]
+    numbers: [1, 1, 1, 1],
+    role: "/szefowie",
+  }
+
+  handleChangeRole = id => {
+    this.setState({
+      role: id,
+    })
   }
 
   handleChangeNumber = e => {
@@ -26,7 +33,9 @@ class App extends Component {
             <section className="page">
               {<Page
                 numbers={this.state.numbers}
+                role={this.state.role}
                 changeNumber={this.handleChangeNumber}
+                changeRole={this.handleChangeRole}
               />}
             </section>
           </main>

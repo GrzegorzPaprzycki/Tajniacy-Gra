@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/HomePage.css';
 import Input from '../components/Input';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = (props) => {
 
@@ -12,7 +13,7 @@ const HomePage = (props) => {
             <h2>Podaj kod gry (4 dowolne cyfry)</h2>
             <form className="codeForm">
                 {numberHolders}
-                <button>DALEJ</button>
+                <button className="main" ><NavLink to="/page02" exact >DALEJ</NavLink></button>
             </form>
         </div>
     );
