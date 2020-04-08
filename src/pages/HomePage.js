@@ -13,7 +13,7 @@ const HomePage = (props) => {
             <h2>Podaj kod gry (4 dowolne cyfry)</h2>
             <form className="codeForm">
                 {numberHolders}
-                <button className="main" ><NavLink to="/page02" exact >DALEJ</NavLink></button>
+                <button onClick={props.drawClick} className="main" ><NavLink to="/page02" exact >DALEJ</NavLink></button>
             </form>
         </div>
     );

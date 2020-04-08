@@ -11,9 +11,9 @@ const Page = (props) => {
     return (
         <>
             <Switch>
-                <Route path="/" exact render={() => <HomePage numbers={props.numbers} changeNumber={props.changeNumber} />} />
+                <Route path="/" exact render={() => <HomePage numbers={props.numbers} changeNumber={props.changeNumber} drawClick={props.drawClick} />} />
                 <Route path="/page02" render={() => <Page02 role={props.role} changeRole={props.changeRole} />} />
-                <Route path="/szefowie" render={() => <ChefPage />} />
+                <Route path="/szefowie" render={() => <ChefPage cards={props.cards} />} />
                 <Route path="/zgadujacy" render={() => <GuessPage />} />
                 <Route component={ErrorPage} />
             </Switch>
