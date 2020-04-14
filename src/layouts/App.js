@@ -7,6 +7,10 @@ import Header from './Header';
 class App extends Component {
   state = {
     numbers: [1, 1, 1, 1],
+    sumNumbers: 0,
+    startingColor: "",
+    activeColor: "",
+    colors: ["#292c24", "white", "white", "white", "white", "white", "white", "white", "red", "red", "red", "red", "red", "red", "red", "red", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"],
     role: "/szefowie",
     cards: [
       { id: 0, text: "Melon", color: "blue" },
@@ -54,10 +58,32 @@ class App extends Component {
   }
 
   handleDrawClick = () => {
-    const cards = this.state.cards.map(card => {
-      card.text = this.words[0];
+    const { numbers } = this.state;
+    // Sum of given numbers
+    let sumNumbers = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sumNumbers = sumNumbers + numbers[i] * 1
+    }
+    // Choosing starting color
+    let startingColor = "";
+    if (sumNumbers % 2 === 0) startingColor = "blue";
+    else startingColor = "red";
+    const activeColor = startingColor;
+    // Adding starting color to colors array
+    let colors = [...this.state.colors];
+    colors.push(startingColor);
+    // Choosing card text and color
+    const multiplicator = (numbers[0] * 1000 + numbers[1] * 100 + numbers[2] * 10 + numbers[3]);
+    let cards = [...this.state.cards];
+    cards.forEach(card => {
+      const multiplicator2 = (multiplicator + card.id) * (card.id + 1);
+      card.text = this.words[multiplicator2 % this.words.length];
+      card.color = colors[multiplicator2 % colors.length];
+      this.words.splice(multiplicator2 % this.words.length, 1);
+      colors.splice(multiplicator2 % colors.length, 1);
     })
-    console.log(cards);
+    // setState
+    this.setState({ cards, sumNumbers, startingColor, activeColor })
   }
 
   render() {
@@ -71,6 +97,7 @@ class App extends Component {
             <section className="page">
               {<Page
                 numbers={this.state.numbers}
+                startingColor={this.state.startingColor}
                 role={this.state.role}
                 cards={this.state.cards}
                 changeNumber={this.handleChangeNumber}
