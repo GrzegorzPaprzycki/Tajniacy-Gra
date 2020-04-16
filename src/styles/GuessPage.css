@@ -1,0 +1,46 @@
+.guessPage {
+    margin: 0 15px;
+    padding: 20px;
+    background-color: green;
+}
+
+.guessPage button {
+    position: absolute;
+    top: 10%;
+    padding: 10px 30px;
+    border: 2px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.guessPage button:hover {
+    color: white;
+    background-color: green;
+}
+
+.guessPage .finishTurn {
+    left: 5%;
+}
+
+.guessPage .turnCard {
+    right: 5%;
+}
+
+.guessPage .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #282c34;
+}
+
+.guessPage .cards div {
+    flex-basis: 18%;
+    margin: 10px 0;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    cursor: pointer;
+}

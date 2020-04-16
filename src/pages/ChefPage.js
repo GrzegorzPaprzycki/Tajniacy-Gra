@@ -3,12 +3,8 @@ import Card from '../components/Card';
 import '../styles/ChefPage.css';
 
 class ChefPage extends Component {
-    state = {};
-
     render() {
-
-        let cards = this.props.cards.map(card => <Card id={card.id} key={card.id} text={card.text} color={card.color} />)
-
+        let cards = this.props.cards.map(card => <Card id={card.id} key={card.id} text={card.text} color={card.color} role={this.props.role} />)
         return (
             <div style={{ backgroundColor: `${this.props.startingColor}` }} className="chefPage" >
                 <section className="cards">

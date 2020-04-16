@@ -13,31 +13,31 @@ class App extends Component {
     colors: ["#292c24", "white", "white", "white", "white", "white", "white", "white", "red", "red", "red", "red", "red", "red", "red", "red", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"],
     role: "/szefowie",
     cards: [
-      { id: 0, text: "Melon", color: "blue" },
-      { id: 1, text: "Lampa", color: "red" },
-      { id: 2, text: "Koc", color: "white" },
-      { id: 3, text: "Samolot", color: "red" },
-      { id: 4, text: "Chiny", color: "white" },
-      { id: 5, text: "Mieszkanie", color: "blue" },
-      { id: 6, text: "Klawiatura", color: "white" },
-      { id: 7, text: "Ronaldo", color: "#292c24" },
-      { id: 8, text: "Bajka", color: "blue" },
-      { id: 9, text: "Smok", color: "red" },
-      { id: 10, text: "Chleb", color: "red" },
-      { id: 11, text: "Kapeć", color: "red" },
-      { id: 12, text: "Opona", color: "blue" },
-      { id: 13, text: "Małpa", color: "white" },
-      { id: 14, text: "Czapka", color: "blue" },
-      { id: 15, text: "Oddech", color: "blue" },
-      { id: 16, text: "Gips", color: "blue" },
-      { id: 17, text: "Autostrada", color: "red" },
-      { id: 18, text: "Zapach", color: "white" },
-      { id: 19, text: "Skóra", color: "red" },
-      { id: 20, text: "Batuta", color: "red" },
-      { id: 21, text: "Wzrok", color: "blue" },
-      { id: 22, text: "Skarpeta", color: "white" },
-      { id: 23, text: "Plaża", color: "blue" },
-      { id: 24, text: "Księżyc", color: "white" },
+      { id: 0, text: "Melon", color: "blue", active: true },
+      { id: 1, text: "Lampa", color: "red", active: false },
+      { id: 2, text: "Koc", color: "white", active: false },
+      { id: 3, text: "Samolot", color: "red", active: false },
+      { id: 4, text: "Chiny", color: "white", active: false },
+      { id: 5, text: "Mieszkanie", color: "blue", active: false },
+      { id: 6, text: "Klawiatura", color: "white", active: false },
+      { id: 7, text: "Ronaldo", color: "#292c24", active: false },
+      { id: 8, text: "Bajka", color: "blue", active: false },
+      { id: 9, text: "Smok", color: "red", active: false },
+      { id: 10, text: "Chleb", color: "red", active: false },
+      { id: 11, text: "Kapeć", color: "red", active: false },
+      { id: 12, text: "Opona", color: "blue", active: false },
+      { id: 13, text: "Małpa", color: "white", active: false },
+      { id: 14, text: "Czapka", color: "blue", active: false },
+      { id: 15, text: "Oddech", color: "blue", active: false },
+      { id: 16, text: "Gips", color: "blue", active: false },
+      { id: 17, text: "Autostrada", color: "red", active: false },
+      { id: 18, text: "Zapach", color: "white", active: false },
+      { id: 19, text: "Skóra", color: "red", active: false },
+      { id: 20, text: "Batuta", color: "red", active: false },
+      { id: 21, text: "Wzrok", color: "blue", active: false },
+      { id: 22, text: "Skarpeta", color: "white", active: false },
+      { id: 23, text: "Plaża", color: "blue", active: false },
+      { id: 24, text: "Księżyc", color: "white", active: false },
     ],
   }
 
@@ -86,6 +86,14 @@ class App extends Component {
     this.setState({ cards, sumNumbers, startingColor, activeColor })
   }
 
+  handleActiveCard = id => {
+    const cards = [...this.state.cards];
+    const index = cards.findIndex(card => card.id === id);
+    cards.forEach(card => card.active = false);
+    cards[index].active = true;
+    this.setState({ cards });
+  }
+
   render() {
     return (
       <Router>
@@ -103,6 +111,7 @@ class App extends Component {
                 changeNumber={this.handleChangeNumber}
                 changeRole={this.handleChangeRole}
                 drawClick={this.handleDrawClick}
+                activeCard={this.handleActiveCard}
               />}
             </section>
           </main>
