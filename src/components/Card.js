@@ -8,8 +8,8 @@ class Card extends Component {
         fontWeight: 'bold'
     }
 
-    standardStyle = {
-        backgroundColor: '#eee'
+    checkedStyle = {
+        backgroundColor: this.props.color
     }
 
     render() {
@@ -19,7 +19,7 @@ class Card extends Component {
             );
         } else {
             return (
-                <div style={this.props.active ? this.activeStyle : this.standardStyle} id={this.props.id} onClick={() => this.props.activeCard(this.props.id)} >{this.props.text}</div>
+                <div style={this.props.active ? this.activeStyle : this.props.checked ? this.checkedStyle : null} id={this.props.id} onClick={() => this.props.activeCard(this.props.id)} >{this.props.text}</div>
             );
         }
     }
