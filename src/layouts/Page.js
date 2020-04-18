@@ -14,7 +14,7 @@ const Page = (props) => {
                 <Route path="/" exact render={() => <HomePage numbers={props.numbers} changeNumber={props.changeNumber} drawClick={props.drawClick} />} />
                 <Route path="/page02" render={() => <Page02 role={props.role} changeRole={props.changeRole} />} />
                 <Route path="/szefowie" render={() => <ChefPage startingColor={props.startingColor} role={props.role} cards={props.cards} />} />
-                <Route path="/zgadujacy" render={() => <GuessPage startingColor={props.startingColor} role={props.role} cards={props.cards} activeCard={props.activeCard} selectedCard={props.selectedCard} gameEnded={props.gameEnded} endGame={props.endGame} removeActive={props.removeActive} turnCard={props.turnCard} />} />
+                <Route path="/zgadujacy" render={() => <GuessPage startingColor={props.startingColor} role={props.role} cards={props.cards} activeCard={props.activeCard} selectedCard={props.selectedCard} gameEnded={props.gameEnded} endGame={props.endGame} blueChecked={props.blueChecked} redChecked={props.redChecked} removeActive={props.removeActive} turnCard={props.turnCard} />} />
                 <Route component={ErrorPage} />
             </Switch>
         </>

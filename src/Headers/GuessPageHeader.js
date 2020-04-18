@@ -2,7 +2,7 @@ import React from 'react';
 
 const GuessPageHeader = () => {
     return (
-        <h1>Zgadujący</h1>
+        <h1>Zgadywacze</h1>
     );
 }
 

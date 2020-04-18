@@ -22,11 +22,11 @@ class Page02 extends Component {
 
     render() {
         return (
-            <div className="page02" >
+            <div className="page02">
                 <h2>Po której stronie chcesz grać?</h2>
-                <div className="chooseSide" >
+                <div className="chooseSide">
                     <button id="/szefowie" name="firstButtonClass" className={this.state.firstButtonClass} onClick={this.handleClick} >Szefowie</button>
-                    <button id="/zgadujacy" name="secondButtonClass" className={this.state.secondButtonClass} onClick={this.handleClick} >Zgadujący</button>
+                    <button id="/zgadujacy" name="secondButtonClass" className={this.state.secondButtonClass} onClick={this.handleClick} >Zgadywacze</button>
                 </div>
                 <button className="main" ><NavLink to={this.props.role} exact >GRAJ</NavLink></button>
             </div>

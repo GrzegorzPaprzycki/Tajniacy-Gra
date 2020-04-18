@@ -3,8 +3,13 @@ body {
 }
 
 .App-header {
-  color: white;
+  color: #eee;
   text-align: center;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 500%;
+}
+
+.App-header h1 {
+  font-family: 'Frijole', cursive;
+  font-weight: normal;
 }

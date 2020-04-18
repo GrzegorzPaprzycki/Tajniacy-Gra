@@ -28,28 +28,31 @@ class GuessPage extends Component {
             const index = cards.findIndex(card => card.active);
             if (index >= 0) {
                 this.props.turnCard();
-                if (cards[this.props.selectedCard].color === "#292c24" && cards[this.props.selectedCard].checked) {
+                if (cards[this.props.selectedCard].color === "#292c24") {
                     setTimeout(() => {
-                        alert("game over")
+                        alert("Game over")
                     }, 500);
                     this.props.endGame();
-                } else if (cards[this.props.selectedCard].color !== this.state.frameColor && cards[this.props.selectedCard].color !== "#292c24") {
+                }
+                else if (this.props.blueChecked === 7 && cards[this.props.selectedCard].color === "blue") {
+                    setTimeout(() => {
+                        alert("Game over - blue win")
+                    }, 500);
+                    this.props.endGame();
+                }
+                else if (this.props.redChecked === 7 && cards[this.props.selectedCard].color === "red") {
+                    setTimeout(() => {
+                        alert("Game over - red win")
+                    }, 500);
+                    this.props.endGame();
+                }
+                else if (cards[this.props.selectedCard].color !== this.state.frameColor && cards[this.props.selectedCard].color !== "#292c24") {
                     this.handleFinishTurn()
                 }
             }
         }
 
     }
-
-    // componentDidUpdate() {
-    //     const cards = [...this.props.cards];
-    //     if (cards[this.props.selectedCard].color === "#292c24" && cards[this.props.selectedCard].checked) {
-    //         setTimeout(() => {
-    //             alert("game over")
-    //         }, 500);
-    //     }
-    // }
-
 
     render() {
         let cards = this.props.cards.map(card => <Card id={card.id} key={card.id} text={card.text} color={card.color} active={card.active} checked={card.checked} role={this.props.role} activeCard={this.props.activeCard} />)
