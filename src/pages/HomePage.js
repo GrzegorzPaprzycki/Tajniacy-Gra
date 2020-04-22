@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 class HomePage extends Component {
 
     componentDidMount() {
-        console.log('HomePage did mount');
         this.props.fetchData();
     }
 
@@ -14,7 +13,6 @@ class HomePage extends Component {
         const { numbers, drawClick, changeNumber } = this.props;
         const inputs = [0, 1, 2, 3];
         const numberHolders = inputs.map(input => <Input key={input} id={input} numbers={numbers} changeNumber={changeNumber} />)
-
         return (
             <div className="home" >
                 <h2>Podaj kod gry (4 dowolne cyfry)</h2>

@@ -4,6 +4,36 @@
     background-color: green;
 }
 
+button.newGame {
+    position: absolute;
+    top: 9%;
+    left: 5%;
+    border: 2px solid green;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button.newGame a {
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: black;
+}
+
+button.newGame:hover {
+    color: white;
+    background-color: green;
+}
+
+button.newGame:active {
+    color: white;
+    background-color: green;
+    letter-spacing: 1px;
+}
+
 .chefPage .cards {
     display: flex;
     flex-wrap: wrap;

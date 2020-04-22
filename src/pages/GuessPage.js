@@ -29,20 +29,27 @@ class GuessPage extends Component {
             if (index >= 0) {
                 this.props.turnCard();
                 if (cards[this.props.selectedCard].color === "#292c24") {
-                    setTimeout(() => {
-                        alert("Game over")
-                    }, 500);
-                    this.props.endGame();
+                    if (this.state.frameColor === "blue") {
+                        setTimeout(() => {
+                            alert("Game over - zwyciężył czerwony")
+                        }, 500);
+                        this.props.endGame();
+                    } else {
+                        setTimeout(() => {
+                            alert("Game over - zwyciężył niebieski")
+                        }, 500);
+                        this.props.endGame();
+                    }
                 }
                 else if (this.props.blueChecked === 7 && cards[this.props.selectedCard].color === "blue") {
                     setTimeout(() => {
-                        alert("Game over - blue win")
+                        alert("Game over - zwyciężył niebieski")
                     }, 500);
                     this.props.endGame();
                 }
                 else if (this.props.redChecked === 7 && cards[this.props.selectedCard].color === "red") {
                     setTimeout(() => {
-                        alert("Game over - red win")
+                        alert("Game over - zwyciężył czerwony")
                     }, 500);
                     this.props.endGame();
                 }
