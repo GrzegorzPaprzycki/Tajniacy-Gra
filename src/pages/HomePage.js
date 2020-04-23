@@ -7,6 +7,7 @@ class HomePage extends Component {
 
     componentDidMount() {
         this.props.fetchData();
+        this.props.initializeState();
     }
 
     render() {

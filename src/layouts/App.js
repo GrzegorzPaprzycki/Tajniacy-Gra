@@ -147,12 +147,55 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  initializeState = () => {
+    this.setState({
+      numbers: [1, 1, 1, 1],
+      sumNumbers: 0,
+      startingColor: "",
+      colors: ["#292c24", "white", "white", "white", "white", "white", "white", "white", "red", "red", "red", "red", "red", "red", "red", "red", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"],
+      role: "/szefowie",
+      cards: [
+        { id: 0, text: "Melon", color: "blue", active: false, checked: false },
+        { id: 1, text: "Lampa", color: "red", active: false, checked: false },
+        { id: 2, text: "Koc", color: "white", active: false, checked: false },
+        { id: 3, text: "Samolot", color: "red", active: false, checked: false },
+        { id: 4, text: "Chiny", color: "white", active: false, checked: false },
+        { id: 5, text: "Mieszkanie", color: "blue", active: false, checked: false },
+        { id: 6, text: "Klawiatura", color: "white", active: false, checked: false },
+        { id: 7, text: "Ronaldo", color: "#292c24", active: false, checked: false },
+        { id: 8, text: "Bajka", color: "blue", active: false, checked: false },
+        { id: 9, text: "Smok", color: "red", active: false, checked: false },
+        { id: 10, text: "Chleb", color: "red", active: false, checked: false },
+        { id: 11, text: "Kapeć", color: "red", active: false, checked: false },
+        { id: 12, text: "Opona", color: "blue", active: false, checked: false },
+        { id: 13, text: "Małpa", color: "white", active: false, checked: false },
+        { id: 14, text: "Czapka", color: "blue", active: false, checked: false },
+        { id: 15, text: "Oddech", color: "blue", active: false, checked: false },
+        { id: 16, text: "Gips", color: "blue", active: false, checked: false },
+        { id: 17, text: "Autostrada", color: "red", active: false, checked: false },
+        { id: 18, text: "Zapach", color: "white", active: false, checked: false },
+        { id: 19, text: "Skóra", color: "red", active: false, checked: false },
+        { id: 20, text: "Batuta", color: "red", active: false, checked: false },
+        { id: 21, text: "Wzrok", color: "blue", active: false, checked: false },
+        { id: 22, text: "Skarpeta", color: "white", active: false, checked: false },
+        { id: 23, text: "Plaża", color: "blue", active: false, checked: false },
+        { id: 24, text: "Księżyc", color: "white", active: false, checked: false },
+      ],
+      selectedCard: -1,
+      gameEnded: false,
+      redChecked: 0,
+      blueChecked: 0,
+    })
+  }
+
   render() {
     return (
       <Router>
         <div className="App">
           <header className="App-header">
-            {<Header />}
+            {<Header
+              gameEnded={this.state.gameEnded}
+            />}
           </header>
           <main>
             <section className="page">
@@ -173,6 +216,7 @@ class App extends Component {
                 turnCard={this.handleTurnCard}
                 endGame={this.handleEndGame}
                 fetchData={this.fetchData}
+                initializeState={this.initializeState}
               />}
             </section>
           </main>

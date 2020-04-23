@@ -1,8 +1,8 @@
 import React from 'react';
 
-const GuessPageHeader = () => {
+const GuessPageHeader = (props) => {
     return (
-        <h1>Zgadywacze</h1>
+        <h1 className={props.gameEnded ? "guessPageHeader gameEnded" : "guessPageHeader"}>Zgadywacze</h1>
     );
 }
 

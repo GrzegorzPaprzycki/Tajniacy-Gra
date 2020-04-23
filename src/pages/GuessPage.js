@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
 import '../styles/GuessPage.css';
+import Message from '../components/Message';
 
 
 class GuessPage extends Component {
     state = {
         frameColor: this.props.startingColor,
+        winner: "...",
     }
 
     handleFinishTurn = () => {
@@ -31,25 +33,33 @@ class GuessPage extends Component {
                 if (cards[this.props.selectedCard].color === "#292c24") {
                     if (this.state.frameColor === "blue") {
                         setTimeout(() => {
-                            alert("Game over - zwyciężył czerwony")
+                            this.setState({
+                                winner: "red",
+                            })
                         }, 500);
                         this.props.endGame();
                     } else {
                         setTimeout(() => {
-                            alert("Game over - zwyciężył niebieski")
+                            this.setState({
+                                winner: "blue",
+                            })
                         }, 500);
                         this.props.endGame();
                     }
                 }
                 else if (this.props.blueChecked === 7 && cards[this.props.selectedCard].color === "blue") {
                     setTimeout(() => {
-                        alert("Game over - zwyciężył niebieski")
+                        this.setState({
+                            winner: "blue",
+                        })
                     }, 500);
                     this.props.endGame();
                 }
                 else if (this.props.redChecked === 7 && cards[this.props.selectedCard].color === "red") {
                     setTimeout(() => {
-                        alert("Game over - zwyciężył czerwony")
+                        this.setState({
+                            winner: "red",
+                        })
                     }, 500);
                     this.props.endGame();
                 }
@@ -65,9 +75,13 @@ class GuessPage extends Component {
         let cards = this.props.cards.map(card => <Card id={card.id} key={card.id} text={card.text} color={card.color} active={card.active} checked={card.checked} role={this.props.role} activeCard={this.props.activeCard} />)
         return (
             <>
+                <Message
+                    winner={this.state.winner}
+                    gameEnded={this.props.gameEnded}
+                />
                 <div className="guessPage" style={{ backgroundColor: `${this.state.frameColor}` }}>
-                    <button className="finishTurn" onClick={this.handleFinishTurn} >Zakończ turę</button>
-                    <button className="turnCard" onClick={this.handleTurnCard} >Odkryj kartę</button>
+                    <button className={this.props.gameEnded ? "finishTurn gameEnded" : "finishTurn"} onClick={this.handleFinishTurn} >Zakończ turę</button>
+                    <button className={this.props.gameEnded ? "turnCard gameEnded" : "turnCard"} onClick={this.handleTurnCard} >Odkryj kartę</button>
                     <section className="cards">
                         {cards}
                     </section>

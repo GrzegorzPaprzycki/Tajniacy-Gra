@@ -5,11 +5,11 @@ import GuessPageHeader from '../Headers/GuessPageHeader';
 import StandardHeader from '../Headers/StandardHeader';
 
 
-const Header = () => {
+const Header = (props) => {
     return (
         <Switch>
             <Route path="/szefowie" exact render={() => <ChefPageHeader />} />
-            <Route path="/zgadujacy" exact render={() => <GuessPageHeader />} />
+            <Route path="/zgadujacy" exact render={() => <GuessPageHeader gameEnded={props.gameEnded} />} />
             <Route path="/" component={StandardHeader} />
             <Route component={StandardHeader} />
         </Switch>
