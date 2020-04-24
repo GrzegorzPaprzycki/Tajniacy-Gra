@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Tajniacy-Gra/static/css/main.ebd15026.chunk.css",
-    "main.js": "/Tajniacy-Gra/static/js/main.ba9b931c.chunk.js",
-    "main.js.map": "/Tajniacy-Gra/static/js/main.ba9b931c.chunk.js.map",
+    "main.js": "/Tajniacy-Gra/static/js/main.76fb1fa9.chunk.js",
+    "main.js.map": "/Tajniacy-Gra/static/js/main.76fb1fa9.chunk.js.map",
     "runtime-main.js": "/Tajniacy-Gra/static/js/runtime-main.170d2392.js",
     "runtime-main.js.map": "/Tajniacy-Gra/static/js/runtime-main.170d2392.js.map",
     "static/js/2.841f9588.chunk.js": "/Tajniacy-Gra/static/js/2.841f9588.chunk.js",
     "static/js/2.841f9588.chunk.js.map": "/Tajniacy-Gra/static/js/2.841f9588.chunk.js.map",
     "index.html": "/Tajniacy-Gra/index.html",
-    "precache-manifest.8be206fcebc927394f1bcc6ede49b768.js": "/Tajniacy-Gra/precache-manifest.8be206fcebc927394f1bcc6ede49b768.js",
+    "precache-manifest.a35e8f3e2bb21a093683348394856390.js": "/Tajniacy-Gra/precache-manifest.a35e8f3e2bb21a093683348394856390.js",
     "service-worker.js": "/Tajniacy-Gra/service-worker.js",
     "static/css/main.ebd15026.chunk.css.map": "/Tajniacy-Gra/static/css/main.ebd15026.chunk.css.map",
     "static/js/2.841f9588.chunk.js.LICENSE.txt": "/Tajniacy-Gra/static/js/2.841f9588.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.170d2392.js",
     "static/js/2.841f9588.chunk.js",
     "static/css/main.ebd15026.chunk.css",
-    "static/js/main.ba9b931c.chunk.js"
+    "static/js/main.76fb1fa9.chunk.js"
   ]
 }

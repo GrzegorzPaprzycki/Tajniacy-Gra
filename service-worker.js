@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Tajniacy-Gra/precache-manifest.8be206fcebc927394f1bcc6ede49b768.js"
+  "/Tajniacy-Gra/precache-manifest.a35e8f3e2bb21a093683348394856390.js"
 );
 
 self.addEventListener('message', (event) => {

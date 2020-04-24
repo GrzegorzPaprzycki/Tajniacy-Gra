@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3a9910fe25bfa557c003f6c0e2aca61b",
+    "revision": "ea21a0117a4368b04ddfdb8975a7209c",
     "url": "/Tajniacy-Gra/index.html"
   },
   {
-    "revision": "da5052d31aac13c4006f",
+    "revision": "0d4149029d23d6d8dd7f",
     "url": "/Tajniacy-Gra/static/css/main.ebd15026.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Tajniacy-Gra/static/js/2.841f9588.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "da5052d31aac13c4006f",
-    "url": "/Tajniacy-Gra/static/js/main.ba9b931c.chunk.js"
+    "revision": "0d4149029d23d6d8dd7f",
+    "url": "/Tajniacy-Gra/static/js/main.76fb1fa9.chunk.js"
   },
   {
     "revision": "7e3fc14f6f8e4773c72c",
