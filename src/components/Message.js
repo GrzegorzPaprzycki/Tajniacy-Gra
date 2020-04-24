@@ -3,11 +3,12 @@ import '../styles/Message.css';
 import { NavLink } from 'react-router-dom';
 
 const Message = (props) => {
+    const { gameEnded, winner, click } = props;
     return (
         <div className="message">
-            <button className={props.gameEnded ? "newGame gameEnded" : "newGame"}><NavLink to="/" exact >Nowa gra</NavLink></button>
-            <h2 className={props.gameEnded ? "gameEnded" : null} >{props.winner === "blue" ? "zwyciężył niebieski" : props.winner === "red" ? "zwyciężył czerwony" : "GAME OVER"}</h2>
-            <button onClick={props.click} className={props.gameEnded ? "showAnswer answerShown" : "showAnswer"}>Pokaż rozwiązanie</button>
+            <button className={gameEnded ? "newGame gameEnded" : "newGame"}><NavLink to="/" exact >Nowa gra</NavLink></button>
+            <h2 className={gameEnded ? "gameEnded" : null} >{winner === "blue" ? "zwyciężył niebieski" : winner === "red" ? "zwyciężył czerwony" : "GAME OVER"}</h2>
+            <button onClick={click} className={gameEnded ? "showAnswer answerShown" : "showAnswer"}>Pokaż rozwiązanie</button>
         </div>
     );
 }

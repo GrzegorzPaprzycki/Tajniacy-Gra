@@ -79,17 +79,19 @@ class GuessPage extends Component {
     }
 
     render() {
-        let cards = this.props.cards.map(card => <Card id={card.id} key={card.id} text={card.text} color={card.color} active={card.active} checked={card.checked} role={this.props.role} gameEnded={this.props.gameEnded} activeCard={this.props.activeCard} answerShown={this.state.answerShown} />)
+        const { role, gameEnded, activeCard } = this.props;
+        const { answerShown, winner, frameColor } = this.state;
+        let cards = this.props.cards.map(card => <Card id={card.id} key={card.id} text={card.text} color={card.color} active={card.active} checked={card.checked} role={role} gameEnded={gameEnded} activeCard={activeCard} answerShown={answerShown} />)
         return (
             <>
                 <Message
-                    winner={this.state.winner}
-                    gameEnded={this.props.gameEnded}
+                    winner={winner}
+                    gameEnded={gameEnded}
                     click={this.handleShowAnswer}
                 />
-                <div className="guessPage" style={{ backgroundColor: `${this.state.frameColor}` }}>
-                    <button className={this.props.gameEnded ? "finishTurn gameEnded" : "finishTurn"} onClick={this.handleFinishTurn} >Zakończ turę</button>
-                    <button className={this.props.gameEnded ? "turnCard gameEnded" : "turnCard"} onClick={this.handleTurnCard} >Odkryj kartę</button>
+                <div className="guessPage" style={{ backgroundColor: `${frameColor}` }}>
+                    <button className={gameEnded ? "finishTurn gameEnded" : "finishTurn"} onClick={this.handleFinishTurn} >Zakończ turę</button>
+                    <button className={gameEnded ? "turnCard gameEnded" : "turnCard"} onClick={this.handleTurnCard} >Odkryj kartę</button>
                     <section className="cards">
                         {cards}
                     </section>

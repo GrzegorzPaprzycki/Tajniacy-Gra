@@ -4,7 +4,7 @@ import '../styles/ErrorPage.css';
 const ErrorPage = () => {
     return (
         <div className="errorPage" >
-            ErrorPage
+            Nieprawidłowa ścieżka. Upewnij się, że adres jest poprawny.
         </div>
     );
 }

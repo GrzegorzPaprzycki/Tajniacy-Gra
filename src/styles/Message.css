@@ -57,7 +57,7 @@ button.showAnswer {
 }
 
 button.showAnswer.answerShown {
-    top: 9%;
+    top: 7%;
 }
 
 button.showAnswer:hover {

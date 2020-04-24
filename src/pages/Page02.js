@@ -9,14 +9,15 @@ class Page02 extends Component {
     }
 
     render() {
+        const { role } = this.props;
         return (
             <div className="page02">
                 <h2>Po której stronie chcesz grać?</h2>
                 <div className="chooseSide">
-                    <button id="/szefowie" name="firstButtonClass" className={this.props.role === "/szefowie" ? "active" : null} onClick={this.handleClick} >Szefowie</button>
-                    <button id="/zgadujacy" name="secondButtonClass" className={this.props.role === "/zgadujacy" ? "active" : null} onClick={this.handleClick} >Zgadywacze</button>
+                    <button id="/szefowie" name="firstButtonClass" className={role === "/szefowie" ? "active" : null} onClick={this.handleClick} >Szefowie</button>
+                    <button id="/zgadujacy" name="secondButtonClass" className={role === "/zgadujacy" ? "active" : null} onClick={this.handleClick} >Zgadywacze</button>
                 </div>
-                <button className="main" ><NavLink to={this.props.role} exact >GRAJ</NavLink></button>
+                <button className="main" ><NavLink to={role} exact >GRAJ</NavLink></button>
             </div>
         );
     }
