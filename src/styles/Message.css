@@ -2,6 +2,17 @@ div.message button.newGame {
     z-index: 1;
     transform: translateY(-30vh);
     transition: .5s;
+    background-color: lightgreen;
+}
+
+div.message button.newGame a {
+    transition: .5s;
+}
+
+
+div.message button.newGame:hover a {
+    color: white;
+    background-color: green;
 }
 
 div.message button.newGame.gameEnded {
@@ -27,4 +38,35 @@ div.message h2 {
 
 div.message h2.gameEnded {
     top: 5%;
+}
+
+button.showAnswer {
+    position: absolute;
+    top: -30%;
+    right: 5%;
+    border: 2px solid green;
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+button.showAnswer.answerShown {
+    top: 9%;
+}
+
+button.showAnswer:hover {
+    color: white;
+    background-color: green;
+}
+
+button.showAnswer:active {
+    color: white;
+    background-color: green;
+    letter-spacing: 1px;
 }

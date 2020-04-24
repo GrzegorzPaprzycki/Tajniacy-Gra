@@ -12,6 +12,12 @@ class Card extends Component {
         backgroundColor: this.props.color
     }
 
+    answerShownStyle = {
+        backgroundColor: this.props.color,
+        opacity: "35%",
+    }
+
+
     render() {
         if (this.props.role === "/szefowie") {
             return (
@@ -19,7 +25,7 @@ class Card extends Component {
             );
         } else {
             return (
-                <div style={this.props.active ? this.activeStyle : this.props.checked ? this.checkedStyle : null} id={this.props.id} onClick={() => this.props.activeCard(this.props.id)} >{this.props.text}</div>
+                <div style={this.props.active ? this.activeStyle : this.props.checked ? this.checkedStyle : this.props.answerShown ? this.answerShownStyle : null} id={this.props.id} onClick={() => this.props.activeCard(this.props.id)} >{this.props.text}</div>
             );
         }
     }
