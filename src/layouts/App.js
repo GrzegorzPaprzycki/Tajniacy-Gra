@@ -3,6 +3,7 @@ import '../styles/App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Page from './Page';
 import Header from './Header';
+import cardWords from '../words.txt';
 
 class App extends Component {
   state = {
@@ -139,7 +140,7 @@ class App extends Component {
   }
 
   fetchData = () => {
-    return fetch('words.txt')
+    return fetch(cardWords)
       .then(res => res.text().then(text => text.split(/\n/)))
       .then(result => {
         this.words = result
